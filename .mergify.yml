@@ -1,8 +1,7 @@
 commands_restrictions:
   queue:
     conditions:
-      - sender = {{author}}
-      - author = onecursor6-oss
+      - sender = onecursor6-oss
 
 queue_rules:
   - name: default
