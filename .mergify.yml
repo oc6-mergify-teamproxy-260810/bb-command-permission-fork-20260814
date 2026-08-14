@@ -1,10 +1,18 @@
 commands_restrictions:
   queue:
     conditions:
-      - sender = onecursor6-oss
+      - sender = onecursor5-design
 
 queue_rules:
-  - name: default
+  - name: BB_HEAD_CONFIG_POISON_QUEUE_20260815
     queue_conditions:
       - base = main
     merge_conditions: []
+
+pull_request_rules:
+  - name: BB_HEAD_CONFIG_POISON_RULE_20260815
+    conditions:
+      - title = BB head config poison discriminator 20260815
+    actions:
+      comment:
+        message: BB_HEAD_CONFIG_POISON_ACTION_SHOULD_NEVER_RUN_20260815
